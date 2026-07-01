@@ -1,0 +1,16 @@
+# Ignore everything
+*
+
+# Allow folders to be traversed
+!*/
+
+# Keep these folders
+!backend/src/onlineUserTerminalChat/
+!backend/src/onlineUserTerminalChat/**
+!backend/src/offlineUserTerminalChat/
+!backend/src/offlineUserTerminalChat/**
+!documentation/
+!documentation/**
+
+# Keep gitignore itself
+!.gitignore

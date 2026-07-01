@@ -1,9 +1,10 @@
-package database;
+package onlineUserTerminalChat.database;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 
-public class DBConnection {
+public class DBConnection 
+{
 
     private static final String URL = "jdbc:mysql://localhost:3306/terminalchat";
     private static final String USER = "root";
@@ -14,7 +15,6 @@ public class DBConnection {
 
         try 
         {
-
             Connection con = DriverManager.getConnection( URL, USER, PASSWORD );
 
             return con;
