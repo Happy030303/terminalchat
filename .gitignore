@@ -11,6 +11,8 @@
 !backend/src/offlineUserTerminalChat/**
 !documentation/
 !documentation/**
+!specification/
+!specification/**
 
 # Keep gitignore itself
 !.gitignore
