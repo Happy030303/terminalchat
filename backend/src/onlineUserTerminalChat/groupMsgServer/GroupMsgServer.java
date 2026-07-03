@@ -6,7 +6,9 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.HashMap;
 
-public class GroupMsgServer {
+// group server is not encrypted, it stores the plain text in database, we will make it end to end encypted later. . .
+public class GroupMsgServer 
+{
     static HashMap<String, GroupUserHandler> hashmap = new HashMap<String, GroupUserHandler>();
 
     static ServerSocket serverSocket;
@@ -26,7 +28,6 @@ public class GroupMsgServer {
                 while (true) // always listen the request from clients
                 {
                     socket = serverSocket.accept(); // wait till any connection is recived
-                    
                     BufferedReader br = new BufferedReader(new InputStreamReader(socket.getInputStream()));
                     String senderName = br.readLine();
                     

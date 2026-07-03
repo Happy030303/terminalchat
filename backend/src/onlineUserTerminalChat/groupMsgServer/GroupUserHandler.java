@@ -22,6 +22,7 @@ public class GroupUserHandler implements Runnable
 
 
 //_________________________________________________________________________________________________________
+//_________________________________________________________________________________________________________
 
 
     GroupUserHandler(Socket socket, String senderName, BufferedReader br)  // constructor
@@ -39,6 +40,7 @@ public class GroupUserHandler implements Runnable
     }
 
 
+//________________________________________________________________________________________________________________
 //________________________________________________________________________________________________________________
    
 
@@ -61,11 +63,12 @@ public class GroupUserHandler implements Runnable
 
 
 //___________________________________________________________________________________________________________________________________________
+//___________________________________________________________________________________________________________________________________________
 
     // save chats on database
     // save chats on database
     private void savingGroupMsgInDB(String senderName, String msg)
-{
+    {
     try
     {
         // find userId from username
@@ -101,7 +104,7 @@ public class GroupUserHandler implements Runnable
 
 
 //____________________________________________________________________________________________________________________________________________
-
+//____________________________________________________________________________________________________________________________________________
 
 // Run() method : it is the    '''''''         STARTING POINT      ''''''''''    of this class when we run class
     @Override
@@ -109,9 +112,6 @@ public class GroupUserHandler implements Runnable
     {
         try 
         {
-            // String recieverName = br.readLine();
-            // System.out.println("sender's Name : " + senderName);
-            // System.out.println("reciever Name : " + recieverName);
                 if(checkUserInGroupFromDB(senderName))
                 {
                     pw.println("GROUP_ACCESS_GRANTED");

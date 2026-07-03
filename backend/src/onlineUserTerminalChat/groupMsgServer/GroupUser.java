@@ -18,15 +18,11 @@ public class GroupUser
         try 
         {
 
-            BufferedReader keyboard = new BufferedReader(new InputStreamReader(System.in)); // Keyboard se input lene ke
-                                                                                            // liye
-            BufferedReader br = new BufferedReader(new InputStreamReader(socket.getInputStream())); // Server se
-                                                                                                    // messages receive
-                                                                                                    // karne ke liye
+            BufferedReader keyboard = new BufferedReader(new InputStreamReader(System.in)); // Keyboard se input lene ke liye
+            BufferedReader br = new BufferedReader(new InputStreamReader(socket.getInputStream())); // Server se messages receive karne ke liye
             PrintWriter pw = new PrintWriter(socket.getOutputStream(), true);
 
             System.out.print("sender name is  : "+userName+"\n");
-
             String senderName = userName;
             pw.println(senderName);
 
@@ -38,7 +34,7 @@ public class GroupUser
                 return;
             }
 
-  // we will use GroupUser just to send text into group and this class will not listen as all text will be sent to user only...
+  // we will use GroupUser just to send text into group and this class will not listen as all text will be sent to group only...
             // Sender : this loop is to send text to the server
             while (true) 
             {

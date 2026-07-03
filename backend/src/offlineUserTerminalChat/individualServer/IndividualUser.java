@@ -1,4 +1,4 @@
-package onlineUserTerminalChat.individualMsgServer;
+package offlineUserTerminalChat.individualServer;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -187,8 +187,8 @@ public class IndividualUser
             
             // check both user are in Platform database or not
             // check both user are online or not ? ? ? 
-            System.out.print("sender's name : "); 
-            String senderName = keyboard.readLine(); // sending sender's name
+            System.out.print("sender's name : ");
+            String senderName = keyboard.readLine();
             pw.println(senderName);
 
 
@@ -197,23 +197,26 @@ public class IndividualUser
             PublicKey publicKey = (PublicKey) rsaKeys.get(0);
             PrivateKey privateKey = (PrivateKey) rsaKeys.get(1);
             String publicKeyString = Base64.getEncoder().encodeToString(publicKey.getEncoded());
-            pw.println(publicKeyString); // sending sender's public rsa key to reciever . . .
+            pw.println(publicKeyString);
 
             
             System.out.print("receiver's name : ");
-            String receiverName = keyboard.readLine(); // sending reciever's name
+            String receiverName = keyboard.readLine();
             pw.println(receiverName);
 
             // recieving the other user RSA key string . . . 
+            // System.out.println("get the other user RSA key string");  ///////////////////////////////////////////////////////////
             String otherUserRsaPublicKeyString = br.readLine();
-            byte[] keyBytes = Base64.getDecoder().decode(otherUserRsaPublicKeyString); // converting rsa Key string into Base64, i guess
+            byte[] keyBytes = Base64.getDecoder().decode(otherUserRsaPublicKeyString);
             X509EncodedKeySpec keySpec = new X509EncodedKeySpec(keyBytes);
             KeyFactory keyFactory = KeyFactory.getInstance("RSA");
             otherUserPublicRsaKey = keyFactory.generatePublic(keySpec);
-           
-            // till here the code will not move until we wil not get the rsa public key of other user here . . . 
+            // System.out.println("other username rsa key is : " +otherUserRsaPublicKeyString); ////////////////////////////////////////////////////
+
+
             System.out.println("All things are done correctly");
             
+
 
 
     // user have just two things to do, send msg and listen msg
@@ -230,7 +233,7 @@ public class IndividualUser
 
                         SecretKey decyrptAesKey = decryptAESKey(encryptedAESkey, privateKey);
                         String msg = decryptMsg(decyrptAesKey, encryptedMessage);
-                        System.out.println();
+                    
                         System.out.println(receiverName+" : "+msg+"\n");
 
                     } catch (IOException e) {  System.out.println("error mila bhai ");  e.printStackTrace();}
@@ -247,7 +250,6 @@ public class IndividualUser
             // Sender : this loop is to send text to the server
             while (true) 
             {
-                System.out.print("You : ");
                 String msg = keyboard.readLine();
 
                 SecretKey aesKey = createAESKey();

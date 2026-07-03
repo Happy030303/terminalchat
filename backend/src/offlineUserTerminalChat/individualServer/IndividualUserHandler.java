@@ -1,4 +1,4 @@
-package onlineUserTerminalChat.individualMsgServer;
+package offlineUserTerminalChat.individualServer;
 
 import java.io.BufferedReader;
 import java.io.PrintWriter;
@@ -129,9 +129,10 @@ public class IndividualUserHandler implements Runnable
  
             if(checkUserIsAvilableInDb(senderName))
             {
-                System.out.println("yes, user is found in platform DB\n");
+                System.out.println("yes users are valid, we checked on DB\n");
                 // store in hashmap
                 hashMap.put(senderName, this); // it will keep storing the sender : sender's handler obj(the user who called the server) in Hashmap
+                
                 if(checkUserIsOnlineOrNot(senderName)) // checks user(sender ) is online or not, checks in hashMap
                 {
                     System.out.println("online users are : "+hashMap.keySet());

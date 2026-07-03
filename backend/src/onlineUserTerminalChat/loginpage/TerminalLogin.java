@@ -8,6 +8,7 @@ import java.sql.ResultSet;
 import java.util.Scanner;
 import org.mindrot.jbcrypt.BCrypt;
 import onlineUserTerminalChat.groupMsgServer.GroupUser;
+import onlineUserTerminalChat.individualMsgServer.IndividualUser;
 
 
 // this class is responsible for login or create account for our platform : "Varta" aka "Vartagram"
@@ -49,7 +50,18 @@ public class TerminalLogin
                 if(validPassword)
                 {   
                     System.out.println("login successful");
-                    GroupUser.groupUser(terminalUsername);
+                    System.out.println("1 : Group Chat (group chat is not e2ee");
+                    System.out.println("2 : Individual Chat (Individual chat is end to end encrypted");
+                    System.out.println("choose 1 or 2");
+                    int choice = scan.nextInt();
+
+                    switch (choice) 
+                    {
+                        case 1 : GroupUser.groupUser(terminalUsername); break;
+                        // case 2 : IndividualUser.individualUserMainMethod(); break;////////////////////////////////////////////
+                        default: System.out.println("wrong option choosen");break;
+                    }
+                    
                 }
                 else{System.out.println("invalid user or password");}
             }
