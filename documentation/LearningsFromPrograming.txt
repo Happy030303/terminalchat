@@ -1,0 +1,7 @@
+1. Draw the flow of code on paper.
+
+2. Identify the responsibility of each class and thread.
+
+3. Write the flow of code in plain English.
+4. Only then write the Java code.
+
