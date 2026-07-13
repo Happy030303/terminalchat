@@ -5,10 +5,11 @@
 !*/
 
 # Keep these folders
-!backend/src/onlineUserTerminalChat/
-!backend/src/onlineUserTerminalChat/**
-!backend/src/offlineUserTerminalChat/
-!backend/src/offlineUserTerminalChat/**
+!backend/src/FinalVersion/
+!backend/src/FinalVersion/**
+!backend/src/version1TerminalChat/
+!backend/src/version1TerminalChat/**
+
 !documentation/
 !documentation/**
 !specification/
